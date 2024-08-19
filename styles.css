@@ -1,0 +1,176 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    background-color: #000; /* Fondo negro para el body en caso de que el GIF no cargue */
+    background-image: url('neom-va9218QJFAk-unsplash.jpg'); /* GIF de fondo */
+    background-size: cover; /* Ajusta el tamaño del GIF al contenedor */
+    background-position: center; /* Centra el GIF */
+    background-repeat: no-repeat; /* Evita que el GIF se repita */
+    font-size: 16px; /* Tamaño base de fuente (1rem = 16px) */
+}
+
+header, footer {
+    background-color: transparent; /* Fondo transparente para header y footer */
+    color: #fff; /* Color blanco para el texto */
+    text-align: center;
+    padding: 0.625rem; /* Padding de 10px */
+    font-size: 0.875rem; /* Tamaño de fuente de 14px */
+    box-shadow: none; /* Sin sombra para header y footer */
+}
+
+footer {
+    margin-top: auto; /* Empuja el footer al final de la página */
+}
+
+main {
+    display: flex; /* Usa flexbox para el main */
+    justify-content: center; /* Centra el contenedor horizontalmente */
+    align-items: flex-start; /* Alinea los elementos al inicio verticalmente */
+    width: 100%; /* Usa todo el ancho disponible */
+    padding: 1.25rem; /* Ajuste de padding de 20px */
+    box-sizing: border-box; /* Incluye el padding en el cálculo del ancho */
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: row; /* Coloca las secciones en una fila */
+    gap: 1.25rem; /* Espacio entre las secciones de 20px */
+    max-width: 75rem; /* Ancho máximo para pantallas grandes de 1200px */
+    width: 100%; /* Usa todo el ancho disponible */
+    justify-content: center; /* Centra las secciones horizontalmente */
+}
+
+#textoEntradaSection, #textoResultadoSection {
+    flex: 1; /* Permite que cada sección ocupe el mismo espacio */
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en una columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+    text-align: center; /* Alinea el texto al centro */
+    position: relative; /* Permite el posicionamiento absoluto de los hijos */
+}
+
+textarea {
+    width: 100%;
+    height: 25rem; /* Ajusta la altura para ambos textarea a 400px */
+    margin-bottom: 0.625rem; /* Margen inferior de 10px */
+    padding: 0.625rem; /* Padding de 10px */
+    border: 0.0625rem solid #444; /* Borde de 1px opcional para el textarea */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro con opacidad del 80% */
+    border-radius: 0.3125rem; /* Bordes redondeados de 5px */
+    color: #fff; /* Color del texto */
+    resize: none; /* Desactiva el redimensionamiento */
+    font-size: 1.125rem; /* Tamaño del texto de 18px */
+    font-family: inherit; /* Usa la fuente heredada */
+    z-index: 1; /* Asegura que el textarea esté por encima de la imagen y el texto debajo */
+}
+
+#botones {
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 0.625rem; /* Espacio entre los botones de 10px */
+}
+
+button, .botonCopiar {
+    padding: 0.625rem 3.125rem; /* Padding de 10px 50px */
+    margin: 0.5rem; /* Margen de 8px */
+    border: none;
+    border-radius: 0.3125rem; /* Bordes redondeados de 5px */
+    cursor: pointer;
+    font-size: 1rem; /* Tamaño del texto del botón de 16px */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+    background-color: #6c757d; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+}
+
+button:hover {
+    background-color: #5a6268; /* Color de fondo al pasar el cursor sobre el botón */
+}
+
+.botonCopiar {
+    background-color: #343a40; /* Color de fondo del botón de copiar */
+    display: none; /* Oculta el botón de copiar por defecto */
+}
+
+.botonCopiar:hover {
+    background-color: #495057; /* Color de fondo al pasar el cursor sobre el botón de copiar */
+}
+
+#textoOrientacion {
+    margin-top: 0.3125rem; /* Espacio entre el textarea y el texto de orientación de 5px */
+    font-size: 0.875rem; /* Tamaño del texto de 14px */
+    color: #fff; /* Color de texto más claro */
+}
+
+.ocultar {
+    display: none; /* Oculta el elemento en el que se aplica la clase */
+}
+
+.imagen {
+    width: 31.25rem; /* Ajusta el tamaño de la imagen a 500px */
+    height: auto; /* Mantiene la proporción de la imagen */
+    position: absolute; /* Posiciona la imagen absolutamente dentro del contenedor */
+    top: 40%; /* Centra verticalmente la imagen */
+    left: 50%; /* Centra horizontalmente la imagen */
+    transform: translate(-50%, -50%); /* Ajusta la posición para centrarla */
+    z-index: 0; /* Asegura que la imagen esté detrás del textarea */
+}
+
+#textoDebajoImagen {
+    position: absolute; /* Posiciona el texto absolutamente dentro del contenedor */
+    top: 19%; /* Ajusta la posición vertical del texto */
+    left: 65%; /* Ajusta la posición horizontal del texto */
+    transform: translate(-50%, -50%); /* Centra el texto */
+    display: flex; /* Usa Flexbox para alinear el texto verticalmente */
+    flex-direction: column; /* Coloca los elementos en una columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    font-size: 0.875rem; /* Tamaño del texto de 14px */
+    color: #fff; /* Color del texto */
+    white-space: nowrap; /* Evita que el texto se ajuste en múltiples líneas */
+}
+
+#textoDebajoImagen span {
+    display: block;
+    text-align: center; /* Alinea el texto al centro */
+}
+
+.resultado-container {
+    position: relative; /* Permite que los elementos hijos se posicionen relativamente */
+    width: 100%;
+    height: 100%; /* Ajusta la altura del contenedor al tamaño disponible */
+}
+
+@media (max-width: 50rem) { /* 800px */
+    button, .botonCopiar {
+        padding: 0.5rem 1rem; /* Ajusta el padding para pantallas más pequeñas */
+    }
+
+    .contenedor {
+        flex-direction: column; /* Coloca las secciones en una columna para pantallas pequeñas */
+        align-items: center; /* Centra las secciones horizontalmente */
+    }
+
+    #textoEntradaSection, #textoResultadoSection {
+        flex: none; /* Ajusta el tamaño de las secciones para pantallas pequeñas */
+        width: 100%; /* Asegura que las secciones usen todo el ancho disponible */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
